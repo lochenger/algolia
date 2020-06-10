@@ -1,3 +1,4 @@
+// Problem 1:
 // const input =
 // [
 //   {
@@ -92,31 +93,47 @@ Here's a link to [a website](http://foo.bar), which should be rendered in an anc
 
 Here's another p tag`
 
+const expectedOutput = `<h3>An h3 header</h3>
+
+<p>This sentence should be rendered inside a paragraph tag</p>
+
+<p>So should this one...</p>
+<p>And also this one</p>
+
+<h1>But this one should be an h1 header</h1>
+
+<p>Here's a link to <a href="http://foo.bar">a website</a>, which should be rendered in an anchor tag</p>
+
+<p>Here's another p tag</p>
+`
+
 function markDown(input) {
-  let output = ""
-  const stack = [];
+  let output = [];
 
   for (let str of input.split('\n')) {
     if (str.startsWith('###')) {  //H3
-      output += '<h3>'
-      // output add rest of line
-      stack.push('</h3>')
+      output.push('<h3>' + str.slice(4) + '</h3>');
     } else if (str.startsWith('#')) {  //H1
-      output += '<h1>'
-      stack.push('</h1>')
-    } else if (str.match()) {   //Check ref
-
-    } else {  //paragraph
-
+      output.push('<h1>' + str.slice(2) + '</h1>');
+    } else if (str.match('.*\[.*\].*\\)')) {   //Check ref
+      const start1 = str.indexOf('\[');
+      const end1 = str.indexOf('\]');
+      const start2 = str.indexOf('\(');
+      const end2 = str.indexOf('\)');
+      output.push(
+        '<p>' + str.slice(0,start1)
+        + '<a href="' + str.slice(start2+1,end2) + '">'
+        + str.slice(start1+1,end1) + '</a>'
+        + str.slice(end2+1) + '</p>'
+      )
+    } else if (str.length > 0){  //paragraph
+      output.push('<p>' + str + '</p>');
+    } else {                    //NewLine
+      output.push(str);
     }
   }
 
-  return output;
+  return output.join('\n');
 }
 
-<h3>An h3 header</h3>
-  <p>
-  <h1>
-  <p>
-    <a href = 'url'></a>
-  </p>
+console.log(markDown(input))
