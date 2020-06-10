@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="shortcut icon" href="./favicon.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css">
+  <link rel="stylesheet" href="./src/index.css">
+  <link rel="stylesheet" href="./src/app.css">
+
+  <title>Airports Search</title>
+</head>
+
+<header class="header">
+  <h1 class="header-title">
+    Airports Search
+  </h1>
+  <p class="header-subtitle">
+    using
+    <a href="https://github.com/algolia/instantsearch.js">
+      Algolia InstantSearch.js
+    </a>
+  </p>
+</header>
+
+<body>
+  <main class="search-container">
+    <div class="left-panel">
+      <h3>Sort by</h3>
+      <div id="sort-by"></div>
+      <h3>Countries</h3>
+      <div id="refinementList"></div>
+      <h3>Cities</h3>
+      <div id="cityList"></div>
+      <h3>Connections</h3>
+      <div id="connections"></div>
+      <div id="clear-refinements"></div>
+    </div>
+    <div class="right-panel">
+      <div id="searchbox"></div>
+      <div id="stats"></div>
+      <!-- <div id="maps"></div> -->
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3.32.0/algoliasearchLite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.6.0"></script>
+  <script src="./src/app.js"></script>
+</body>
+
+</html>

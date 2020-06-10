@@ -1,0 +1,117 @@
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  padding: 24px;
+  line-height: 24px;
+  overflow-y: scroll;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  flex-direction: column;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(284deg, #fedd4e, #fcb43a);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-title {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.header-title::after {
+  content: ' ▸ ';
+  padding: 0 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+}
+
+.search-container {
+  display: flex;
+}
+
+.left-panel {
+  float: left;
+}
+
+.right-panel {
+  margin-left: 40px;
+  margin-right: auto;
+}
+
+.ais-ClearRefinements-button {
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 80px
+}
+
+.ais-RefinementList-showMore {
+  margin-left: 40px;
+}
+
+.ais-RefinementList-count {
+  font-size: 10px
+}
+
+.ais-CityList-showMore {
+  margin-left: 40px;
+}
+
+.ais-CityList-count {
+  font-size: 10px
+}
+
+.ais-Pagination-list {
+  margin-top: 60px;
+}
+
+.ais-Highlight-highlighted {
+  color: inherit;
+  font-size: inherit;
+}
+
+/* #maps {
+  height: 500px;
+} */
+
+#searchbox {
+  flex-grow: 0;
+  margin-bottom: 1rem;
+}
+
+#stats {
+  flex-grow: 0;
+}
+
+#connections {
+  margin: 10px auto;
+}
+
+#hits {
+  margin: 2rem auto;
+}
+
+#pagination {
+  margin: 2rem auto;
+  text-align: center;
+}
